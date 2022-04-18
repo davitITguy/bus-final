@@ -1,0 +1,380 @@
+.canvas{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: auto;
+}
+.sky{
+    background-color: #00bfff;
+    height: 30vh;
+    width: 100vw;
+}
+.sun{
+    background-color: #ffff00;
+    height: 15vh;
+    width: 15vh;
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    border-radius: 50%;
+}
+.cloud{
+    background-color: #ffffff;
+    height: 5vh;
+    width: 10vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 30%;
+}
+.cloud-1{
+    top: 10vh;
+    left: 75%;
+    animation: cloud-1 3s linear infinite;
+    animation-delay: 3s;
+}
+.cloud-2{
+    top: 10vh;
+    left: 60%;
+    animation: cloud-2 3s linear infinite;
+    animation-delay: 3s;
+}
+.cloud-3{
+    top: 20vh;
+    left: 40%;
+    animation: cloud-3 3s linear infinite;
+    animation-delay: 3s;
+}
+.city-bg{
+    background-color: #fff;
+    height: 70vh;
+    width: 100vw;
+}
+.city{
+    background-color: rgb(220, 219, 219);
+    height: 20vh;
+    width: 100vw;
+    border-right: 1px solid black;
+}
+.road{
+    background-color: rgb(182, 182, 182);
+    height: 50vh;
+    width: 100vw;
+    border-right: 1px solid black;
+}
+.bus{
+    position: relative;
+    
+}
+.bus-head{
+    position: absolute;
+    top: 215.5px;
+    left: 45%;
+    height: 12vh;
+    width: 5vw;
+    background-color: yellow;
+    border: 5px solid black;
+    border-left: none;
+    /* animation: bus-mov-head 3s linear infinite;
+    animation-delay: 4s;
+    animation-fill-mode: forwards; */
+    animation:wheels-run 2s  linear 4s forwards
+}
+
+.bus-body{
+    position: absolute;
+    background-color: yellow;
+    height: 25vh;
+    width: 40vw;
+    left: 5%;
+    top: 93px;
+    border: 5px solid black;
+    border-right: none;
+    animation: bus-move 3s linear ;
+    animation-delay: 4s;
+    animation-fill-mode: forwards;
+
+}
+.bus-wheel-left{
+    position: absolute;
+    background-color: black;
+    height: 10vh;
+    width: 10vh;
+    left: 10%;
+    top: 200px;
+    border-radius: 50%;
+
+
+}
+.bus-wheel-right{
+    position: absolute;
+    background-color: black;
+    height: 10vh;
+    width: 10vh;
+    left: 65%;
+    top: 200px;
+    border-radius: 50%;
+    animation:wheels-run 1s  linear 5s forwards;
+}
+.bus-wheel-right-disc{
+    position: absolute;
+    background-color: white;
+    height: 5vh;
+    width: 5vh;
+    left: 67%;
+    top: 210px;
+    border-radius: 50%;
+    border: 8px dashed black;
+    animation: wheel-wheeler 1s infinite linear;
+    animation-delay: 3s;
+    animation:wheels-run 1s  linear 5s forwards;
+}
+.bus-wheel-left-disc{
+    position: absolute;
+    background-color: white;
+    height: 5vh;
+    width: 5vh;
+    left: 12%;
+    top: 210px;
+    border-radius: 50%;
+    border: 8px dashed black;
+    animation: wheel-wheeler  1s infinite 3s linear;
+
+
+}
+
+@keyframes wheel-wheeler {
+    0% {
+        transform: rotateZ(0deg);
+    }
+    100% {
+        transform: rotateZ(360deg);
+    }
+}
+    
+.traffic-body{
+    position: absolute;
+    background-color: black;
+    height: 22vw;
+    width: 3vw;
+    right: 5%;
+    bottom: 200px;
+    animation: traffic-skew 2s linear  forwards;
+    animation-delay: 5s;
+}
+.lights{
+    position: absolute;
+    height: 2vw;
+    width: 2vw;
+    right: 16%;
+    bottom: 200px;
+    border-radius: 50%;
+    background-color: grey;
+    animation: lights 1s infinite linear;
+}
+.light-green{
+    bottom: 236px;
+    animation: lights-green 1s  linear;
+    animation-delay: 2s;
+    animation-fill-mode: forwards
+}
+.light-red{
+    bottom: 325px;
+    animation: lights-red 1s  linear;
+    /* animation: lights-red-stop 1s linear; */
+    /* animation-delay: 12s;
+    animation-fill-mode: forwards; */
+}
+.light-orange{
+    animation: lights-orange 1s  linear;
+    animation-delay: 1s;
+    bottom: 280px;
+    /* animation: lights-orange-stop 2s linear;
+    animation-delay: 10s; */
+}
+@keyframes lights-red {
+    0% {
+        background-color: grey;
+    }
+    50% {
+        background-color: grey;
+    }
+    100% {
+        background-color: red;
+    }
+}
+@keyframes lights-red-stop {
+    0% {
+        background-color: red;
+    }
+    50% {
+        background-color: grey;
+    }
+    100% {
+        background-color: grey;
+    }
+}
+
+@keyframes lights-orange {
+    0% {
+        background-color: grey;
+    }
+    50% {
+        background-color: grey;
+    }
+    100% {
+        background-color: orange;
+    }
+}
+@keyframes lights-orange-stop {
+    0% {
+        background-color: orange;
+    }
+    50% {
+        background-color: grey;
+    }
+    100% {
+        background-color: grey;
+    }
+}
+
+
+@keyframes lights-green {
+    0% {
+        background-color: grey;
+    }
+    50% {
+        background-color: grey;
+    }
+    100% {
+        background-color: green;
+    }
+}
+.windows
+{
+    display: flex;
+    justify-content: space-around;
+    margin-top:20px
+}
+.window{
+    background-color: #e5fafa;
+    height: 11vh;
+    width: 10vh;
+    position: relative;
+    border-radius: 30%;
+    display: flex;
+}
+
+
+@keyframes cloud-3 {
+    0% {
+        left:40%;
+    }
+    
+    100% {
+        left: 0%;
+    }
+}
+
+@keyframes cloud-2 {
+    0% {
+        left:60%;
+    }
+    
+    100% {
+        left: 0%;
+    }
+}
+
+
+@keyframes cloud-1 {
+    0% {
+        left:75%;
+    }
+    
+    100% {
+        left: 0%;
+    }
+}
+.line{
+    margin-top: 3px;
+    width: 45vw;
+    height: 10px;
+    background-color: black;
+}
+.line-2{
+    margin-top: 10px;
+    width: 45vw;
+    height: 10px;
+    background-color: black;
+}
+.line-3{
+    margin-top: 20px;
+    width: 8px;
+    height: 123px;
+    background-color: #e5fafa;
+    position: absolute;
+    top: -9%;
+    right: 0px;
+}
+.rock{
+    width: 5vw;
+    height: 70px;
+    background-color: black;
+    position: absolute;
+    right: -134%;
+    border-radius: 20%;
+    bottom: -50px;
+    animation: crash 2s  linear;
+    animation-delay: 2s;
+    animation-fill-mode: forwards;
+}
+@keyframes crash {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-1200%);
+    }
+    
+}
+@keyframes bus-move {
+    0% {
+        
+    }
+    100% {
+        left: 50%;
+       
+    }
+}
+    
+@keyframes bus-move-head {
+    0% {
+        
+    }
+    90%{
+        transform: skewX(180deg);
+    }
+    100% {
+        left: 50%;
+        transform: skew(194deg);
+    }
+}
+@keyframes wheels-run{
+    0% {
+
+    }
+    100% {
+        left: 130%;
+    }
+}
+
+@keyframes traffic-skew {
+    0% {
+
+    }
+    100% {
+        transform: skewX(15deg);
+    }
+}
+
